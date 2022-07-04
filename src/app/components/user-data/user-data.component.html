@@ -1,0 +1,28 @@
+<div *ngIf="(userData$ | async) as userData " class="content">
+    <div>
+      <h3>Details</h3>
+      <div>
+        {{userData.details.name}} <br>
+        {{userData.details.username}} <br>
+        {{userData.details.email}} <br>
+        {{userData.details.phone}} <br>
+        <h3>company</h3>
+        {{userData.details.company.name}} <br>
+        {{userData.details.company.catchPhrase}} <br>
+        {{userData.details.company.bs}} <br>
+        <h3>address</h3>
+        {{userData.details.address.street}} <br>
+        {{userData.details.address.city}} <br>
+        {{userData.details.address.suite}} <br>
+  
+      </div>
+    </div>
+    <div>
+      <h3>albums</h3>
+      <p *ngFor="let album of userData.albumns">{{album.title}}</p>
+    </div>
+    <div>
+      <h3>posts</h3>
+      <p *ngFor="let post of userData.posts"><b>{{post.title}}</b> <br> {{post.body}}</p>
+    </div>
+  </div>
